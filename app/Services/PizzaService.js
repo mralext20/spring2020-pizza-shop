@@ -17,12 +17,20 @@ class PizzaService {
     newIngredient = new Ingredient(newIngredient)
     let pizza = _store.State.pizzas.find(pizza => pizza.id === pizzaId)
     pizza.ingredients.push(newIngredient)
+    pizza.in
     _store.saveState()
   }
 
   deletePizza(id) {
     let pizzas = _store.State.pizzas.filter(pizza => pizza.id !== id)
     _store.State.pizzas = pizzas
+    _store.saveState()
+
+  }
+  deleteIngredient(ingredientId, pizzaId) {
+    let pizza = _store.State.pizzas.find(pizza => pizza.id === pizzaId)
+    let newIngredients = pizza.ingredients.filter(i => i.id !== ingredientId)
+    pizza.ingredients = newIngredients
     _store.saveState()
 
   }

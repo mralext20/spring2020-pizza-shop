@@ -25,7 +25,6 @@ function _loadState() {
 
 class Store {
   saveState() {
-    debugger
     localStorage.setItem("pizzaShop", JSON.stringify(_state))
   }
   /**

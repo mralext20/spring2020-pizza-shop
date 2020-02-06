@@ -52,5 +52,8 @@ export default class PizzaController {
     _pizzaService.deletePizza(id)
     _draw()
   }
-
+  deleteIngredient(ingredientId, pizzaId) {
+    _pizzaService.deleteIngredient(ingredientId, pizzaId)
+    _draw()
+  }
 }

@@ -14,7 +14,7 @@ export default class Pizza {
   get Ingredients() {
     let template = ""
     this.ingredients.forEach(ingredient => {
-      template += ingredient.Template
+      template += ingredient.template(this.id)
     })
     return template
   }
@@ -22,9 +22,15 @@ export default class Pizza {
   get Template() {
     return /*html*/`
 <div class="col-6">
-<h1>${this.pizzaName}</h1>
-<button onclick="app.pizzaController.deletePizza('${this.id}')" class="btn btn-danger">Delete</button>
-<h3>Ingredients: ${this.Ingredients}</h3>
+<div class="row">
+<h1 class="col-10">${this.pizzaName}</h1>
+<button onclick="app.pizzaController.deletePizza('${this.id}')" class="btn col-2 btn-danger"><i class="fas fa-trash"></i></button>
+</div>
+<h3>Ingredients:
+</h3>
+<div class="row">
+${this.Ingredients}
+</div>
 <form onsubmit="app.pizzaController.addIngredient(event, '${this.id}')">
                     <div class="form-group">
                         <label for="">Ingredients</label>
