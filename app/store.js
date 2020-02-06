@@ -1,9 +1,12 @@
 import Value from "./Models/Value.js";
+import Pizza from "./Models/Pizza.js";
 
 let _state = {
   activeValue: new Value({ title: "Value" }),
   /** @type {Value[]} */
-  values: []
+  values: [],
+  /** @type {Pizza[]} */
+  pizzas: [],
 };
 
 class Store {

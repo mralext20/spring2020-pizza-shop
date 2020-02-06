@@ -4,4 +4,12 @@ export default class Pizza {
     this.ingredients = data.ingredients || []
   }
 
+  get Template() {
+    return `
+<h1>${this.pizzaName}</h1>
+<h3>Ingredients: ${this.ingredients}</h3>
+`
+  }
+
+
 }

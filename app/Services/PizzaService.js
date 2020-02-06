@@ -6,6 +6,10 @@ class PizzaService {
   constructor() {
     console.log("pizza service")
   }
+  addPizza(newPizza) {
+    newPizza = new Pizza(newPizza)
+    _store.State.pizzas.push(newPizza)
+  }
 }
 
 const PIZZASERVICE = new PizzaService()

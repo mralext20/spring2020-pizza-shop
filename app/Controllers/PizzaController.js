@@ -1,6 +1,11 @@
 import _pizzaService from "../Services/PizzaService.js"
 import _store from "../store.js"
 
+function _draw() {
+  let pizzas = _store.State.pizzas
+
+}
+
 export default class PizzaController {
   constructor() {
     console.log("pizza controller")
@@ -16,9 +21,9 @@ export default class PizzaController {
       pizzaName: formData.pizzaName.value
     }
 
-    console.log(`newPizza is ${newPizza}`);
+    console.log(newPizza);
 
-
+    _pizzaService.addPizza(newPizza)
 
   }
 
