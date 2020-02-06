@@ -12,7 +12,7 @@ export default class Pizza {
 <div class="col-6">
 <h1>${this.pizzaName}</h1>
 <h3>Ingredients: ${this.ingredients}</h3>
-<form onsubmit="app.pizzaController.addIngredient(event, ${this.id})">
+<form onsubmit="app.pizzaController.addIngredient(event, '${this.id}')">
                     <div class="form-group">
                         <label for="">Ingredients</label>
                         <input type="text" name="ingredientName" class="form-control" placeholder=""

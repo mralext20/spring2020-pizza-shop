@@ -42,7 +42,7 @@ export default class PizzaController {
     }
     console.log(newIngredient);
 
-    _pizzaService.addIngredient(newIngredient);
+    _pizzaService.addIngredient(newIngredient, id);
     _draw();
   }
 
