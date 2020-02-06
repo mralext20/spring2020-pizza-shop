@@ -8,6 +8,18 @@ export default class PizzaController {
 
   addPizza(event) {
 
+    event.preventDefault();
+
+    let formData = event.target;
+
+    let newPizza = {
+      pizzaName: formData.pizzaName.value
+    }
+
+    console.log(`newPizza is ${newPizza}`);
+
+
+
   }
 
 }
