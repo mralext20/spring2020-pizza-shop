@@ -12,6 +12,7 @@ function _draw() {
   pizzaElem.innerHTML = template
 }
 
+
 export default class PizzaController {
   constructor() {
     console.log("pizza controller")
@@ -44,6 +45,11 @@ export default class PizzaController {
 
     _pizzaService.addIngredient(newIngredient, id);
     _draw();
+  }
+
+  deletePizza(id) {
+    _pizzaService.deletePizza(id)
+    _draw()
   }
 
 }

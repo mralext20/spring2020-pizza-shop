@@ -23,6 +23,7 @@ export default class Pizza {
     return /*html*/`
 <div class="col-6">
 <h1>${this.pizzaName}</h1>
+<button onclick="app.pizzaController.deletePizza('${this.id}')" class="btn btn-danger">Delete</button>
 <h3>Ingredients: ${this.Ingredients}</h3>
 <form onsubmit="app.pizzaController.addIngredient(event, '${this.id}')">
                     <div class="form-group">

@@ -17,6 +17,13 @@ class PizzaService {
     let pizza = _store.State.pizzas.find(pizza => pizza.id === pizzaId)
     pizza.ingredients.push(newIngredient)
   }
+
+  deletePizza(id) {
+    let pizzas = _store.State.pizzas.filter(pizza => pizza.id !== id)
+    _store.State.pizzas = pizzas
+
+
+  }
 }
 
 const PIZZASERVICE = new PizzaService()
