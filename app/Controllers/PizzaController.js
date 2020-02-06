@@ -16,6 +16,7 @@ function _draw() {
 export default class PizzaController {
   constructor() {
     console.log("pizza controller")
+    _draw()
   }
 
   addPizza(event) {
