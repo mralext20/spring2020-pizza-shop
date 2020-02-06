@@ -3,7 +3,13 @@ import _store from "../store.js"
 
 function _draw() {
   let pizzas = _store.State.pizzas
+  let pizzaElem = document.getElementById("pizzaRow")
+  let template = ""
 
+  pizzas.forEach(pizza => {
+    template += pizza.Template
+  })
+  pizzaElem.innerHTML = template
 }
 
 export default class PizzaController {
@@ -24,7 +30,7 @@ export default class PizzaController {
     console.log(newPizza);
 
     _pizzaService.addPizza(newPizza)
-
+    _draw()
   }
 
 }
