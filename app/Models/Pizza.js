@@ -1,17 +1,29 @@
 import { generateId } from "../utils.js"
+import Ingredient from "./Ingredient.js"
 
 export default class Pizza {
+  /**
+   * @param {{ pizzaName: any; id: string; ingredients: Ingredient[]; }} data
+   */
   constructor(data) {
     this.pizzaName = data.pizzaName
     this.id = data.id || generateId()
     this.ingredients = data.ingredients || []
   }
 
+  get Ingredients() {
+    let template = ""
+    this.ingredients.forEach(ingredient => {
+      template += ingredient.Template
+    })
+    return template
+  }
+
   get Template() {
     return /*html*/`
 <div class="col-6">
 <h1>${this.pizzaName}</h1>
-<h3>Ingredients: ${this.ingredients}</h3>
+<h3>Ingredients: ${this.Ingredients}</h3>
 <form onsubmit="app.pizzaController.addIngredient(event, '${this.id}')">
                     <div class="form-group">
                         <label for="">Ingredients</label>

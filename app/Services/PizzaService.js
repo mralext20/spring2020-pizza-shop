@@ -14,8 +14,8 @@ class PizzaService {
 
   addIngredient(newIngredient, pizzaId) {
     newIngredient = new Ingredient(newIngredient)
-    let pizza = _store.State.pizzas.find(pizza => pizza.id == pizzaId)
-    _store.State.pizzas.i.push()
+    let pizza = _store.State.pizzas.find(pizza => pizza.id === pizzaId)
+    pizza.ingredients.push(newIngredient)
   }
 }
 
