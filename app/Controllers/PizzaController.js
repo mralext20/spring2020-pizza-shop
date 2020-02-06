@@ -33,4 +33,17 @@ export default class PizzaController {
     _draw()
   }
 
+  addIngredient(event, id) {
+    event.preventDefault();
+    let formData = event.target;
+
+    let newIngredient = {
+      ingredientName: formData.ingredientName.value
+    }
+    console.log(newIngredient);
+
+    _pizzaService.addIngredient(newIngredient);
+    _draw();
+  }
+
 }

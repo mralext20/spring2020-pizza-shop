@@ -1,8 +1,8 @@
 import { generateId } from "../utils.js"
 
-export default class Pizza {
+export default class Ingredient {
   constructor(data) {
-    this.pizzaName = data.pizzaName
+    this.ingredientName = data.ingredientName
     this.id = data.id || generateId()
     this.ingredients = data.ingredients || []
   }
